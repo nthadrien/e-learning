@@ -1,0 +1,97 @@
+---
+import SubscribeCourse from "../../components/forms/subscribeCourse.astro";
+import CourseHeader from "../../components/headers/courseHeader.astro";
+import Layout from "../../layouts/clientLayout.astro";
+
+const included:{icon: string; name: string; }[] = [
+    {icon: "bi bi-play" , name: "342 heures de videos" },
+    {icon: "bi bi-hourglass-split" , name: "3 heures par semaines" },
+    {icon: "bi bi-file-earmark-text" , name: "4 documents a lires" },
+    {icon: "bi bi-file-text" , name: "25 lecons a suivres" },
+    {icon: "bi bi-eye" , name: "1 heures minimum suivis par semaines " },
+    {icon: "bi bi-webcam" , name: "Suivi 1 a 1" },
+    {icon: "bi bi-puzzle" , name: "4 exercices par semaine" },
+    {icon: "bi bi-trophy" , name: "Certificat apres la formation" }
+];
+
+---
+
+<Layout>
+
+   <CourseHeader />
+
+    <main class="container-lg mx-auto p-2 row g-3">
+
+        <!-- description generale -->
+        <section class="col-lg-8">
+            <h5 class="mb-3 fw-bold">Description du cours</h5>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                Architecto eius suscipit veritatis ipsam reiciendis doloremque laborum, dolores repellendus. 
+                Architecto optio inventore ipsa fugiat nesciunt ullam enim veritatis esse temporibus reprehenderit!
+            </p>
+
+            <h6>Sous details comm des certification / apres formation suivi etc</h6>
+            {[1,2,3,4,5,6,7,8].map( it => <p class="btn btn-sm">
+                <i class="bi bi-check text-primary me-1"/> comptences numero {it}
+            </p>)}
+        </section>
+
+        <!-- section d'inscription du cours -->
+         <section class="col-lg-4 sticky-lg-top pt-lg-3">
+            <SubscribeCourse />
+         </section>
+
+        <!-- cours inclusive -->
+        <section class="col-lg-4">
+            <h5 class="mb-3 fw-bold">Ce cours inclut</h5>
+            <div class="row row-cols-2">
+                {included.map( item => <p>
+                    <i class={`bi bi-${item.icon} me-2`}></i> {item.name}
+                </p>)}
+            </div>
+        </section>
+
+        <!-- competences includes -->
+        <section class="col-lg-4">
+            <h5 class="mb-3 fw-bold">Competences a acquerir</h5>
+            <div class="nav gap-2">
+                {[1,2,3,4,5,6,7,8].map( it => <p class="btn btn-outline-secondary rounded-pill btn-sm">
+                    <i class="bi bi-check-circle-fill me-1"/> comptences numero {it}
+                </p>)}
+            </div>
+        </section>
+
+        <!-- prerequisites -->
+        <section class="col-lg-8">
+            <h5 class="mb-3 fw-bold">les prérequis</h5>
+            <ul>
+                <li>prérequis 1 et ensuite... </li>
+                <li>prérequis 1 et ensuite... </li>
+                <li>prérequis 1 et ensuite... </li>
+                <li>prérequis 1 et ensuite... </li>
+                <li>prérequis 1 et ensuite... </li>
+            </ul>
+        </section>
+
+        <!-- lecons -->
+        <section class="col-lg-8">
+            <h5 class="mb-3 fw-bold">Structure du cours</h5>
+            <ul class="list-unstyled accordion" id="structureDuCour">
+                {[1,2,3,4,5].map( item => <li class="accordion-item mb-2">
+                  <button class="accordion-button collapsed p-2 rounded" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${item}`} aria-expanded="false" aria-controls={`collapse${item}`}>
+                      <b>chapite / lecon {item}</b> : Nom ou titre du chapitre
+                  </button>
+                  <div id={`collapse${item}`} class="accordion-collapse collapse" data-bs-parent="#structureDuCour">
+                    <ul class="p-3 ps-5">
+                        {[1,2,3].map( sub => <li>sous chapitre {item}.{sub} du chapitre {item}</li>)}
+                    </ul>
+                  </div>
+                </li>)}
+            </ul>
+        </section>
+
+    </main>
+
+
+</Layout>

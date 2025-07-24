@@ -1,0 +1,34 @@
+---
+
+import CatalogueHeader from "../components/headers/catalogueHeader.astro";
+import Layout from "../layouts/clientLayout.astro";
+import BreadCrumb from "../components/breadCrumb.astro";
+import CatalogueSearch from "../components/forms/catalogueSearch.astro";
+import Pagination from "../components/pagination.astro";
+import CourseCard from "../components/card/courseCard.astro";
+
+---
+
+<Layout>
+
+    <CatalogueHeader />
+    <CatalogueSearch />
+	
+    <main class="container-xxl">
+
+        <section class="row g-2 row-cols-2 row-cols-lg-3 row-cols-xl-4">
+
+            {[1,2,3,4,5,6,7,8].map( item => <div class="col">
+                <CourseCard />
+            </div>)}
+
+        </section>
+
+    </main>
+
+
+    <Pagination />
+
+</Layout>
+
+		

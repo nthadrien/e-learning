@@ -1,0 +1,39 @@
+<form action="">
+
+        
+    <div style="max-width: 768px;" class="mx-auto position-relative mb-3">
+        <input type="search" placeholder="titre;auteur;annee;edition" class="form-control" name="" id="">
+        <button class="btn top-50 end-0 btn-outline-secondary translate-middle-y position-absolute">
+            <i class="bi bi-search"></i>
+        </button>
+    </div>
+
+    <p class="fs-6 fw-semibold">Type</p>
+    {["bords","penfelt","academique","livre de developpmnt personelle"].map( item => <p>
+        <input type="checkbox" class="form-check-input me-1" name={"cat"+item} />
+        {item}
+    </p>)}
+
+    <p class="fs-6 fw-semibold">Categorie</p>
+    {["drama","comedie","scientifique","culturel"].map( item => <p>
+        <input type="checkbox" class="form-check-input me-1" name={"cat"+item} />
+        {item}
+    </p>)}
+
+    <p class="fs-6 fw-semibold">Langue</p>
+    {["anglais","francais","autres"].map( item => <p>
+        <input type="checkbox" class="form-check-input me-1" name={"cat"+item} />
+        {item}
+    </p>)}
+
+    <p class="fs-6 fw-semibold">Popularites</p>
+    {["anglais","francais","autres"].map( item => <a>
+        <i class="bi bi-star-fill"></i>
+    </a>)}
+
+    <div class="my-4">
+        <button class="btn btn-sm btn-primary">
+            <i class="bi bi-search me-1" /> recherche
+        </button>
+    </div>
+</form>

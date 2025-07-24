@@ -1,0 +1,44 @@
+
+<header class="nav justify-content-between justify-content-lg-end align-items-center p-3">
+
+    <button class="d-inline d-md-none btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#dashboardOffcanvas" aria-controls="dashboardOffcanvas" aria-label="Toggle navigation">
+        <i class="bi bi-list"></i>
+    </button>
+
+    <div class="d-flex gap-2 me-0">
+
+        <div class="d-none d-md-flex input-group">
+            <input type="text" class="form-control bg-body-tertiary border-0" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            <span class="input-group-text bi bi-search border-0" id="basic-addon1" />
+        </div>
+
+        <div>
+            <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-bell-fill position-relative">
+                    <small style="font-size: x-small;" class="position-absolute translate-middle top-0 start-100 p-1 text-bg-danger rounded-circle">
+                        4+
+                    </small>
+                </i>
+            </a>
+            <ul class="dropdown-menu">
+                {[1,2,3].map( item => <li>
+                    <a class="dropdown-item" href="/dashboard/messages">
+                        {Math.ceil(300/item)} messages non lus dans le groupe {item}
+                    </a>
+                </li>)}
+            </ul>
+        </div>
+
+        <div>
+            <a class="btn btn-info dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-translate"></i>
+            </a>
+            <ul class="dropdown-menu">
+                <li class="dropdown-item">Fr - English</li>
+                <li class="dropdown-item">En - Francais</li>
+            </ul>
+        </div>
+
+    </div>
+
+</header>

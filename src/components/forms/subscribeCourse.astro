@@ -1,0 +1,38 @@
+---
+import { map } from "astro:schema"
+
+
+
+
+const options = [
+    "instructeur", "souscrire","reviews"
+]
+---
+
+
+<div class="border rounded">
+
+    <ul class="nav nav-tabs mb-3" id="pills-tab" role="tablist">
+        {options.map( (opt, index) => <li class="nav-item" role="presentation">
+          <button class={`nav-link ${index == 0 ? "active": ""}`} id={`${opt}-tab`} data-bs-toggle="pill" data-bs-target={`#${opt}`} type="button" role="tab" aria-controls={`${opt}`} aria-selected="false">{opt}</button>
+        </li>)}
+    </ul>
+
+    <div class="tab-content p-3" id="tabContent">
+        <div class="tab-pane fade show active" id={options[0]} role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+            <p class="fw-bold fs-6 text-capitalize fw-semibold">{options[0]}</p>
+        </div>
+        <div class="tab-pane fade" id={options[1]} role="tabpanel" aria-labelledby={`pills-${options[1]}-tab`} tabindex="0">
+            <p class="fw-bold fs-6 text-capitalize fw-semibold">{options[1]}</p>
+
+            <button class="btn btn-primary">
+                <i class="bi bi-mortarboard me-2"></i>
+                Souscrire au Cours
+            </button>
+        </div>
+
+        <div class="tab-pane fade" id={options[2]} role="tabpanel" aria-labelledby={`pills-${options[2]}-tab`} tabindex="0">
+            <p class="fw-bold fs-6 text-capitalize fw-semibold">{options[2]}</p>
+        </div>
+    </div>
+</div>

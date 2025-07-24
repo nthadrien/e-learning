@@ -1,0 +1,82 @@
+---
+import Layout from "../../layouts/layout.astro";
+
+
+---
+
+<Layout>
+
+
+    <main class="w-100 min-vh-100 row row-cols-1 row-cols-md-2">
+
+
+        <section class="col text-success d-flex flex-column justify-content-center align-items-center gap-2 p-3 border-sm-end">
+
+            <p class="fs-5">
+                Apprendre Avec Nous est<br/>
+                <span class="fw-bold fs-3">
+                    un plaisir partager
+                </span>
+            </p>
+
+            <img style="max-height: 320px;max-width:100%;" class="object-fit-contain" src="/imgs/login.png" alt="">
+
+            <p class="d-none d-md-block" style="max-width: 450px;">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Dolorum eligendi voluptas cumque cum mollitia eius at! Rem dolore, 
+                debitis facere quae, aspernatur cupiditate 
+                deserunt commodi distinctio similique at placeat odio.
+            </p>
+
+        </section>
+
+
+        <section class="col d-flex flex-column justify-content-center align-items-center gap-2">
+
+            <form id="login" style="max-width: 420px;" class="d-flex flex-column gap-2 p-3 ms-lg-0" action="">
+
+                <h4>Logo</h4>
+
+                <label>
+                    <p class="form-label">Numero de telephone ou Email</p>
+                    <input type="tel" class="form-control" name="phone" placeholder="numero de telephone" value="+237 68909678" required/>
+                </label>
+
+                <label>
+                    <p class="form-label">Mot de Passe</p>
+                    <input type="password" class="form-control" name="password" value="1234567" required/>
+                    <small class="text-danger"></small>
+                </label>
+
+                <p style="font-size: small;">
+                    Si vous n'avez pas de creer de comptes vieillez cliquez 
+                    <a href="/login/register" class="fw-bold text-success">ici</a> 
+                    pour vous enregistrer. 
+                </p> 
+
+                <button class="btn btn-primary">
+                    Se connecter
+                </button>
+
+                <p class="text-end fw-semibold text-secondary">
+                    <a href="">Mot de passe oublie?</a>
+                </p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</Layout>
+
+<script>
+
+    const formb : HTMLFormElement | null = document.querySelector('#login')
+    
+    formb?.addEventListener('submit', ( e : SubmitEvent )=>{
+        alert("un instant svp")
+        e.preventDefault();
+        window.location.assign("/dashboard")
+    });
+</script>

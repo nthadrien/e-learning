@@ -1,0 +1,25 @@
+---
+import ThemeSwitcher from "./themeSwitcher.astro";
+
+
+---
+
+
+<div style="bottom:3rem;right:3vw;" class="position-fixed">
+    <div class="dropdown dropstart">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-question-diamond"></i>
+        </button>
+        <div class="dropdown-menu p-1">
+            <div class="d-flex align-items-center">
+                <a title="scroll up" class="btn" href="#">
+                    <i class="bi bi-chevron-up"></i>
+                </a>
+                <ThemeSwitcher />
+                <a title="need help?" href="#help">
+                    <i class="bi bi-headset"></i>
+                </a>
+            </div>
+        </div>    
+    </div>
+</div>

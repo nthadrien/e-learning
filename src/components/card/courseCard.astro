@@ -1,0 +1,44 @@
+
+<aside class="border rounded">
+
+    <div style="height: 240px;" class="w-100 bg-body-tertiary position-relative">
+
+        <img class="w-100 h-100 object-fit-contain" src="/favicon.svg" alt="image" />
+
+        <div class="position-absolute top-0 end-0 w-100 p-3 d-flex justify-content-between">
+            <a href="/catalogue#" class="badge border text-bg-light">
+                4.5k <i class="bi bi-star-fill text-warning"/>
+            </a>
+
+            <span class="small">
+                3k <i class="bi bi-people-fill" />
+            </span>
+        </div>
+
+    </div>
+
+    <div class="p-2 p-lg-3 lh-sm">
+
+        <h6 class="fw-bold">Nom du Cours Bla bla bla tu vois..</h6>
+
+        <p>
+            Petite description : Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, 
+            eius itaque reiciendis repellendus vero aperiam atque soluta,
+        </p>
+
+        <p>
+            {[1,2,3].map( category => <a class="badge bg-success-subtle text-body me-1">
+                categories {category}
+            </a>)}
+        </p>
+
+        <p>
+            <b>Prequis du cours: </b> Bac +2 , Universitaires d Dschang <br/>
+            avec: suivi , coaching et  <br/>
+        </p>
+
+        <a href="/cours/id" class="nav-link fw-bold">Voir plus</a>
+
+    </div>
+
+</aside>

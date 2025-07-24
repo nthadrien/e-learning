@@ -1,0 +1,101 @@
+---
+
+
+const linko = Astro.url;
+
+const infos = [
+    { icon: "bi bi-box" , name: "tableau de bord" , link: "/dashboard"},
+    { icon: "bi bi-easel2" , name: "mes cours" , link: "/dashboard/courses" },
+    { icon: "bi bi-easel2" , name: "mes statistiques" , link: "/dashboard/report" },
+    { icon: "bi bi-calendar" , name: "Calendrier" , link: "/dashboard/activities" }
+];
+
+const accnts = [
+    { icon: "bi bi-wrench" , name: "paramettres" , link: "/dashboard/settings"},
+    { icon: "bi bi-person" , name: "mon profile" , link: "/dashboard/profile" },
+]
+
+const tools = [
+    { icon: "bi bi-chat-square-text" , name: "Communates" , link: "/dashboard/community"},
+    { icon: "bi bi-easel2" , name: "salles de classes" , link: "/dashboard/community#classes" },
+]
+
+const supports = [
+    { icon: "bi bi-folder" , name: "Ma bibiooloteque" , link: "/dashboard/library"},
+    { icon: "bi bi-question-square" , name: "Quizz / devoirs " , link: "/dashboard/quizzes" }
+]
+
+
+---
+
+<nav class="offcanvas offcanvas-end justify-content-between p-3 p-md-0" tabindex="-1" id="dashboardOffcanvas" aria-labelledby="dashboardOffcanvasLabel">
+                
+    <div class="offcanvas-header">
+        <button type="button" class="btn-close text-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <a class="btn btn-sm d-flex gap-2 gap-lg-3" data-bs-toggle="collapse" href="#settings" role="button" aria-expanded="false" aria-controls="settings">
+        <i class="fs-3 bi bi-person-circle"></i> 
+        <span class="text-secondary">
+            <b class="fs-6">Mr Alain George </b> <br/>
+            Ecole normale, M1
+        </span>
+    </a>
+    <div class="collapse" id="settings">
+        {accnts.map( item => <a href={item.link} class={`dash-menu-link ${ item.link === linko.pathname ? "active" : ""}`}>
+            <i class={item.icon} />
+            {item.name}
+        </a>)}
+    </div>
+
+  
+
+    <div class="offcanvas-body flex-column mt-3">
+
+        <h5 class="my-2">Tableau de bord</h5>
+
+        <span class="d-block my-2">Support</span>
+        {infos.map( item => <a href={item.link} class={`dash-menu-link ${ item.link === linko.pathname ? "active" : ""}`}>
+            <i class={item.icon} />
+            {item.name}
+        </a>)}
+
+        <span class="d-block my-2">Outils</span>
+        {tools.map( item => <a href={item.link} class={`dash-menu-link ${ item.link === linko.pathname ? "active" : ""}`}>
+            <i class={item.icon} />
+            {item.name}
+        </a>)}
+
+        <span class="d-block my-2">Support</span>
+        {supports.map( item => <a href={item.link} class={`dash-menu-link ${ item.link === linko.pathname ? "active" : ""}`}>
+            <i class={item.icon} />
+            {item.name}
+        </a>)}
+
+    </div>
+
+</nav>
+
+
+
+
+<style>
+    .dash-menu-link {
+        padding: .32rem;
+        display: grid;
+        grid-template-columns: 32px auto 64px;
+        overflow: hidden;
+        cursor: pointer;
+        border-radius: .24rem;
+
+        &.active {
+            background-color: var(--bs-info);
+            color: whitesmoke;
+        }
+    }
+
+    .dash-menu-link:hover {
+        font-weight: bold;
+        color: var(--bs-success-subtle);
+    }
+</style>

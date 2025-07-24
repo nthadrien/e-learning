@@ -1,0 +1,73 @@
+---
+
+---
+
+
+
+<nav class="container-xxl navbar justify-content-between p-3 py-2">
+
+    <div class="dropdown">
+        <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            trier par
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+    </div>
+
+    <section class="d-flex gap-2">
+
+        <div class="dropdown">
+          <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categories
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Formation</a></li>
+            <li><a class="dropdown-item" href="#">Repetition</a></li>
+            <li><a class="dropdown-item" href="#">Coaching Professionelle</a></li>
+          </ul>
+        </div>
+        
+
+        <div class="dropdown">
+            <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Niveau
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">Bac +1</a></li>
+              <li><a class="dropdown-item" href="#">Bac +2</a></li>
+              <li><a class="dropdown-item" href="#">Ecole primair</a></li>
+              <li><a class="dropdown-item" href="#">Lycee (Ecole Seconadaire)</a></li>
+              <li><a class="dropdown-item" href="#">M1 Master 1 (L1)</a></li>
+            </ul>
+        </div>
+
+        <div class="dropdown">
+            <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              + plus d'options
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+        </div>
+
+
+    </section>
+
+</nav>
+
+<aside class="container-xxl mx-auto border-top  p-3 nav gap-3 align-items-center">
+
+    <strong>Filter : </strong> <span class="vr"></span> 
+    {[1,2,3,4,5].map( item=> <span class="badge text-bg-light rounded-pill"> 
+        Params {item} 
+        <button class="btn btn-sm bg-body rounded-pill"> 
+            <i class="btn-close btn-sm"/>
+        </button>
+    </span>)}
+
+</aside>

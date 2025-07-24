@@ -1,0 +1,29 @@
+---
+import Basefooter from "../components/basefooter.astro";
+import DashboardAccountbar from "../components/navbars/dashboardAccountbar.astro";
+import DashboardSidebar from "../components/navbars/dashboardSidebar.astro";
+import Layout from "./layout.astro";
+
+---
+
+<Layout>
+
+    <div class="w-100 nav navbar-expand-md">
+
+
+        <aside class="col-0 p-0 col-md-3 p-md-3 vh-100">
+            <DashboardSidebar />
+        </aside>
+
+        <main class="col-12 col-md-9">
+
+            <DashboardAccountbar />
+            <section class="p-2 p-lg-3">
+                <slot />
+            </section>
+            <Basefooter />
+
+        </main>
+
+    </div>
+</Layout>

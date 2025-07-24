@@ -1,0 +1,77 @@
+---
+
+import Faq from "../components/faq.astro"
+import HomeHeader from "../components/headers/homeHeader.astro"
+import Layout from "../layouts/clientLayout.astro"
+
+---
+
+<Layout>
+	<HomeHeader />
+	<h1>Astro Index Page </h1>
+	<p>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident est incidunt dolore accusantium, 
+		nihil veritatis porro reiciendis aut at temporibus distinctio. 
+		Optio magni reiciendis aliquam dolor labore hic suscipit at?
+	</p>
+
+
+
+	<section class="py-5">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-md-6">
+					<div class="pe-lg-5"><img alt="nj" width="100%" class="img-fluid rounded" src="/imgs/hero5.avif"></div>
+				</div>
+				<div class="col-md-6">
+					<div class="ps-lg-5 mt-4 mt-lg-0">
+						<span class="text-muted">Features</span>
+						<h2 class="display-6 fw-bold">Our Features</h2>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit Mollitia totam recusandae voluptatibus quam!</p>
+						<ul class="list-unstyled">
+							<li class="d-flex align-items-center mb-3">
+								<i class="bi bi-check-circle-fill text-primary me-3 fs-5" />	
+								Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							</li>
+							<li class="d-flex align-items-center mb-3">
+								<i class="bi bi-check-circle-fill text-primary me-3 fs-5" />
+								Lorem ipsum dolor sit amet consectetur.
+							</li>
+							<li class="d-flex align-items-center mb-3">
+								<i class="bi bi-check-circle-fill fs-5 me-5 text-primary" /> 
+								Lorem ipsum dolor sit amet consectetur adipis.
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<Faq />
+
+
+	<section class="py-5">
+		<div class="container row mx-auto">
+
+			<div class="col-lg-6">
+				<h5 class="display-5 fw-bold">Request a Callback</h5>
+				<form class="d-flex pt-4 me-lg-5">
+					<input aria-label="input" class="form-control me-2" placeholder="Telephone Number" type="tel"> <button class="btn btn-primary text-nowrap" type="submit">Call Me</button>
+				</form>
+			</div>
+
+			<div class="col-lg-6 mt-4 mt-lg-0">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam feugiat erat quis pulvinar semper. Cras commodo vitae libero ut consequat.</p>
+				<div class="d-lg-flex text-primary mt-3 mt-lg-5">
+					<a class="text-decoration-none me-4 fs-5 fw-bold" href="tel:+1(234)%20567-89-01">+1(234) 567-89-10</a> <a class="text-decoration-none fs-5 fw-bold" href="mailto:info@collector.com">hello@yourdomain.com</a>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+
+</Layout>
+
+		

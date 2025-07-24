@@ -1,0 +1,18 @@
+---
+import BreadCrumb from "../components/breadCrumb.astro";
+import Layout from "./layout.astro"
+
+import Footer from "../components/footer.astro";
+import Navbar from "../components/navbar.astro";
+import Utils from "../components/utils.astro";
+---
+
+<Layout>
+    <Navbar />
+    <section class="container-xl mx-auto">
+        <BreadCrumb />
+    </section>
+    <slot />
+    <Footer />
+    <Utils />
+</Layout>

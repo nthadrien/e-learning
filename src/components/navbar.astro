@@ -1,0 +1,95 @@
+---
+import Logo from "./logo.astro";
+import NavSearch from "./navSearch.astro";
+---
+
+<nav class="container-fluid navbar navbar-expand-lg p-lg-3 p-2" aria-label="website navbar">
+    
+    <section class="container-xl gap-2 nav align-items-center mx-auto">
+
+        <a class="navbar-brand" href="#">
+            <Logo />
+        </a>
+
+        <div class="navbar-toggler collapsed border-0 gap-0">
+            
+            <button
+                class="btn"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navAcOptns"
+                aria-controls="navAcOptns"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <i class="bi bi-person-circle" />
+            </button>
+
+            <button
+                class="btn"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarsExampleXxl"
+                aria-controls="navbarsExampleXxl"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </div>
+
+        
+
+        <aside class="col-lg-7 navbar-collapse collapse p-2" id="navbarsExampleXxl" style="">
+
+            <NavSearch />
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/catalogue#">Catalogue</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="/resources#">Resources</a></li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/#">Partenaires</a>
+                </li>
+    
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/#">Carierre</a>
+                </li>
+    
+                <li class="nav-item dropdown">
+                    <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">Formations</a
+                    >
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li>
+                            <a class="dropdown-item" href="#">Another action</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#"
+                                >Something else here</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </aside>
+
+        <aside class="col-lg-2 navbar-collapse collapse gap-3 justify-content-lg-end p-2" id="navAcOptns" style="">
+            <a href="/login" class="d-block d-lg-inline text-primary">connecter</a>
+            <button class="d-block d-lg-inline btn btn-primary">compte</button>
+        </aside>
+
+        <button class="btn btn-outline-secondary">
+            <i class="bi bi-globe" />
+        </button>
+
+    </section>
+
+</nav>
