@@ -28,7 +28,7 @@ const supports = [
 
 ---
 
-<nav class="offcanvas offcanvas-end justify-content-between p-3 p-md-0" tabindex="-1" id="dashboardOffcanvas" aria-labelledby="dashboardOffcanvasLabel">
+<nav class="offcanvas offcanvas-end justify-content-between p-3" tabindex="-1" id="dashboardOffcanvas" aria-labelledby="dashboardOffcanvasLabel">
                 
     <div class="offcanvas-header">
         <button type="button" class="btn-close text-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -36,12 +36,13 @@ const supports = [
 
     <a class="btn btn-sm d-flex gap-2 gap-lg-3" data-bs-toggle="collapse" href="#settings" role="button" aria-expanded="false" aria-controls="settings">
         <i class="fs-3 bi bi-person-circle"></i> 
-        <span class="text-secondary">
-            <b class="fs-6">Mr Alain George </b> <br/>
+        <span class="text-secondary text-start">
+            <b class="fs-6">Mr Alain </b> <br/>
             Ecole normale, M1
         </span>
     </a>
-    <div class="collapse" id="settings">
+
+    <div class="collapse border-start border-info" id="settings">
         {accnts.map( item => <a href={item.link} class={`dash-menu-link ${ item.link === linko.pathname ? "active" : ""}`}>
             <i class={item.icon} />
             {item.name}
@@ -50,11 +51,10 @@ const supports = [
 
   
 
-    <div class="offcanvas-body flex-column mt-3">
+    <div class="offcanvas-body flex-column mt-2">
 
-        <h5 class="my-2">Tableau de bord</h5>
-
-        <span class="d-block my-2">Support</span>
+        <h6 class="my-2">Tableau de bord</h6>
+        
         {infos.map( item => <a href={item.link} class={`dash-menu-link ${ item.link === linko.pathname ? "active" : ""}`}>
             <i class={item.icon} />
             {item.name}

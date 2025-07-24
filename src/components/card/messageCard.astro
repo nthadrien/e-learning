@@ -1,0 +1,31 @@
+---
+interface Props {
+    pic?: string;
+    name ?: string;
+    updated_at?: string;
+    msg?: string;
+}
+
+const {
+    pic = "favicon.svg",
+    name = "inconnue",
+    updated_at = "today",
+    msg = "Hey, pas de message"
+} = Astro.props;
+---
+
+<div class={`border d-flex ${name == "moi" ? "flex-row-reverse" : ""} gap-2 my-2 my-xl-3 m-0`}>
+
+    <img height="48px" width="48px" class="rounded-circle" src={pic} alt="pp">
+    
+    <div style="max-width: min(560px, 70%);" class="bg-body p-2 lh-0 rounded">
+
+        <span class="fw-semibold text-success text-capitalize">{name}</span>
+        <br/> {msg}
+        <small class="d-block text-end text-secondary">
+            {updated_at}  <i class="mx-1 bi bi-check-all"></i>
+        </small>
+
+    </div>
+
+</div>

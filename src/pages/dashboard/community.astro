@@ -1,23 +1,93 @@
 ---
+import MessageCard from "../../components/card/messageCard.astro";
 import DashboardLayout from "../../layouts/DashboardLayout.astro";
+
+
+const sampleMessages = [
+   {
+      pic:"/imgs/avatar1.jpg",
+      name: "richard .e.",
+      msg: "Salut bro, quoi de neuf.",
+      updated_at: "hier",
+   },
+   {
+      pic:"/imgs/avatar2.jpg",
+      name: "moi",
+      msg: "Yo, gars le cours de math sur les fonction me nack tres mal.",
+      updated_at: "aujourdui 8:00",
+   },
+   {
+      pic:"/imgs/avatar1.jpg",
+      name: "richard .e.",
+      msg: "Comment ca, alors que c'est bien expliquer.",
+      updated_at: "aujourdui 9:48",
+   },
+   {
+      pic:"/imgs/avatar2.jpg",
+      name: "moi",
+      msg: "Laisse je ne comprend rien a rien. tu du temps meme morrow?",
+      updated_at: "aujourdui 9:51",
+   },
+];
 
 ---
 <DashboardLayout >
 
-   <section>
+   <h4>Chats & Communates</h4>
+
+   <section class="d-flex align-items-start">
     
-        <aside>
-        
-        </aside>
+      <aside class="col-1 col-lg-3 d-flex flex-column p-2 p-lg-3">
 
-
-        <div>
-            
+         <div class="d-none d-md-flex input-group mb-3">
+            <input type="text" class="form-control bg-body-tertiary border-0" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            <span class="input-group-text bi bi-search border-0" id="basic-addon1" />
         </div>
 
+         <ul class="nav flex-column gap-2 overflow-y-auto">
+            {["richard .e.","clement marshial", "brice Covalent",'Martias Eloundou'].map( item  => <li>
+               <a class="nav-link d-flex gap-1 w-100">
+
+                  <img height="48px" width="48px" class="rounded-circle" src="/imgs/avatar1.jpg" alt="pp" />
+
+                  <span class="text-start text-success">
+                     <b class="text-capitalize text-truncate">{item}</b> 
+                     <small class="text-secondary text-italic float-end">2h</small>
+                     <small class="d-block text-secondary">Dernier messages envoye par moi ou l'autre</small>
+                  </span>
+
+               </a>
+            </li>)}
+         </ul>
+
+      </aside>
+
+
+      <div class="col-11 col-lg-9">
+
+         <header class="nav align-items-center justify-content-between gap-2 p-2 p-lg-3">
+            <div>
+               <img height="48px" width="48px" class="rounded-circle" src="/imgs/avatar1.jpg" alt="pp" />
+               Ricard .E.
+            </div> 
+            <p class="text-info">
+               <i class="bi bi-record-circle"></i> en ligne
+            </p>
+         </header>
+
+         <div class="bg-success-subtle w-100 p-3">
+            { sampleMessages.map( msg => <MessageCard pic={msg.pic} msg={msg.msg} updated_at={msg.updated_at} name={msg.name} /> )}
+         </div>
+
+         <div class="input-group">
+            <input type="text" class="form-control border-0" placeholder="ecrivez votre text ici" aria-label="Username" aria-describedby="basic-addon1">
+            <span class="input-group-text bi bi-emoji border-0" id="basic-addon1" />
+            <span class="input-group-text bi bi-send border-0" id="basic-addon1" />
+         </div>
+         
+      </div>
+
+
    </section>
-
-
-
 
 </DashboardLayout>
