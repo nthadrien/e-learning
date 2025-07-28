@@ -8,21 +8,20 @@ import Layout from "./layout.astro";
 
 <Layout>
 
-    <div class="w-100 nav navbar-expand-md">
+    <div class="w-100 nav navbar-expand-md p-0">
 
 
         <aside class="p-0 col-md-3 col-xl-2">
             <DashboardSidebar />
         </aside>
 
-        <main class="col-12 col-md-9 col-xl-10">
+        <main class="col-12 col-md-9 col-xl-10 h-100 overflow-y-auto">
 
             <DashboardAccountbar />
             <section class="p-1">
                 <slot />
             </section>
-
-            <div class="px-2">
+            <div class="px-2 mt-3">
                 <Basefooter />
             </div>
 

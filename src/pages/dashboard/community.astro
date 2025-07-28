@@ -28,6 +28,18 @@ const sampleMessages = [
       msg: "Laisse je ne comprend rien a rien. tu du temps meme morrow?",
       updated_at: "aujourdui 9:51",
    },
+   {
+      pic:"/imgs/avatar1.jpg",
+      name: "richard .e.",
+      msg: "Non pas vraiment bro. Je suis libre seulement les jeudi et samedi ver 14h comme ca.",
+      updated_at: "aujourdui 9:48",
+   },
+   {
+      pic:"/imgs/avatar2.jpg",
+      name: "moi",
+      msg: "C'est pas facile alors hien...",
+      updated_at: "aujourdui 9:51",
+   },
 ];
 
 ---
@@ -44,7 +56,13 @@ const sampleMessages = [
             <span class="input-group-text bi bi-search border-0" id="basic-addon1" />
         </div>
 
-         <ul class="nav flex-column gap-2 overflow-y-auto">
+        <div class="d-flex gap-2 overflow-x-auto mb-3 ">
+         {["chat","prive","communautes","notifications","favoris"].map( item => <button class="btn btn-sm bg-success-subtle rounded-pill">
+            {item}
+         </button>)}
+        </div>
+
+         <ul class="nav flex-column gap-2">
             {["richard .e.","clement marshial", "brice Covalent",'Martias Eloundou'].map( item  => <li>
                <a class="nav-link d-flex gap-1 w-100">
 
@@ -63,9 +81,9 @@ const sampleMessages = [
       </aside>
 
 
-      <div class="col-11 col-lg-9">
+      <div style="max-height: 100%;" class="col-11 col-lg-9 pt-3 position-relative border">
 
-         <header class="nav align-items-center justify-content-between gap-2 p-2 p-lg-3">
+         <header class="nav align-items-center justify-content-between gap-2 p-2 p-lg-3 bg-body position-absolute top-0 start-0 w-100">
             <div>
                <img height="48px" width="48px" class="rounded-circle" src="/imgs/avatar1.jpg" alt="pp" />
                Ricard .E.
@@ -75,18 +93,17 @@ const sampleMessages = [
             </p>
          </header>
 
-         <div class="bg-success-subtle w-100 p-3">
+         <div style=";" class="bg-success-subtle w-100 p-3">
             { sampleMessages.map( msg => <MessageCard pic={msg.pic} msg={msg.msg} updated_at={msg.updated_at} name={msg.name} /> )}
          </div>
 
-         <div class="input-group">
-            <input type="text" class="form-control border-0" placeholder="ecrivez votre text ici" aria-label="Username" aria-describedby="basic-addon1">
+         <div class="input-group position-absolute bottom-0">
+            <input type="text" class="form-control" placeholder="ecrivez votre text ici" aria-label="Username" aria-describedby="basic-addon1">
             <span class="input-group-text bi bi-emoji border-0" id="basic-addon1" />
             <span class="input-group-text bi bi-send border-0" id="basic-addon1" />
          </div>
          
       </div>
-
 
    </section>
 
